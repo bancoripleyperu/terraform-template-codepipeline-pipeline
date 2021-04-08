@@ -1,6 +1,6 @@
 module "codebuild-project" {
   source  = "bancoripleyperu/codebuild-project/aws"
-  version = "0.0.2"
+  version = "0.0.3"
 
   name             = var.template_name == null ? random_string.this.result : var.template_name
   source_type      = "CODEPIPELINE"
