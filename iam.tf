@@ -15,14 +15,14 @@ resource "aws_iam_policy" "this" {
     Version = "2012-10-17"
     Statement = [
       {
-        Effect   = "Allow",
+        Effect = "Allow",
         Action = [
           "s3:*"
         ],
         Resource = ["arn:aws:s3:::${module.s3-bucket.values.id}/*"]
       },
       {
-        Effect   = "Allow",
+        Effect = "Allow",
         Action = [
           "s3:ListBucket"
         ],
