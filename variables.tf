@@ -35,8 +35,8 @@ variable "privileged_mode" {
 
 variable "environment_variable" {
   description = "(Optional) Environment variable"
-  type        = list(any)
-  default     = []
+  type        = map(string)
+  default     = {}
 }
 
 variable "source_connection" {
