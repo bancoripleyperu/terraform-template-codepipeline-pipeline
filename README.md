@@ -32,7 +32,7 @@ module "codepipeline-pipeline" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_codebuild-project"></a> [codebuild-project](#module\_codebuild-project) | bancoripleyperu/codebuild-project/aws | 0.0.2 |
+| <a name="module_codebuild-project"></a> [codebuild-project](#module\_codebuild-project) | bancoripleyperu/codebuild-project/aws | 0.0.3 |
 | <a name="module_codepipeline-pipeline"></a> [codepipeline-pipeline](#module\_codepipeline-pipeline) | bancoripleyperu/codepipeline-pipeline/aws | 0.0.2 |
 | <a name="module_iam-role"></a> [iam-role](#module\_iam-role) | bancoripleyperu/iam-role/aws | 0.0.3 |
 | <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | bancoripleyperu/s3-bucket/aws | 0.0.4 |
@@ -52,7 +52,7 @@ module "codepipeline-pipeline" {
 | <a name="input_environment_compute_type"></a> [environment\_compute\_type](#input\_environment\_compute\_type) | (Optional) The environment compute type of the codebuild project | `string` | `"BUILD_GENERAL1_SMALL"` | no |
 | <a name="input_environment_image"></a> [environment\_image](#input\_environment\_image) | (Optional) The environment image of the codebuild project | `string` | `"aws/codebuild/amazonlinux2-x86_64-standard:3.0"` | no |
 | <a name="input_environment_type"></a> [environment\_type](#input\_environment\_type) | (Optional) The environment type of the codebuild project | `string` | `"LINUX_CONTAINER"` | no |
-| <a name="input_environment_variable"></a> [environment\_variable](#input\_environment\_variable) | (Optional) Environment variable | `list(any)` | `[]` | no |
+| <a name="input_environment_variable"></a> [environment\_variable](#input\_environment\_variable) | (Optional) Environment variable | `map(string)` | `{}` | no |
 | <a name="input_privileged_mode"></a> [privileged\_mode](#input\_privileged\_mode) | (Optional) The privileged mode of the codebuild project | `string` | `false` | no |
 | <a name="input_source_branch"></a> [source\_branch](#input\_source\_branch) | (Optional) The name of the branch | `string` | `null` | no |
 | <a name="input_source_buildspec"></a> [source\_buildspec](#input\_source\_buildspec) | The buildspec of the codebuild project | `string` | n/a | yes |
