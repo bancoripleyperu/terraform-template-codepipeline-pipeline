@@ -1,3 +1,18 @@
+## Usage
+
+```hcl
+module "codepipeline-pipeline" {
+  source  = "bancoripleyperu/codepipeline-pipeline/template"
+  version = "0.0.1"
+
+  template_name      = "myPipeline"
+  source_buildspec   = file("buildspec.yml")
+  source_provider    = "S3"
+  source_s3bucket    = module.s3-bucket.values.id
+  source_s3objectkey = "build"
+}
+```
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
