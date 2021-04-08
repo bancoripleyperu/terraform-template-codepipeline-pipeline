@@ -27,6 +27,46 @@ resource "aws_iam_policy" "this" {
           "s3:ListBucket"
         ],
         Resource = ["arn:aws:s3:::${module.s3-bucket.values.id}"]
+      },
+      {
+        Effect = "Allow",
+        Action = [
+          "codestar-connections:UseConnection"
+        ],
+        Resource = ["arn:aws:codestar-connections:*:*:connection/*"]
+      },
+      {
+        Effect = "Allow",
+        Action = [
+          "codebuild:StartBuild",
+          "codebuild:BatchGetBuilds"
+        ],
+        Resource = ["arn:aws:codebuild:*:594671381337:project/${module.s3-bucket.values.id}"]
+      },
+      {
+        Effect = "Allow",
+        Action = [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:DescribeLogStreams",
+          "logs:PutRetentionPolicy",
+          "logs:PutLogEvents"
+        ],
+        Resource = ["arn:aws:logs:*:*:log-group:/aws/codebuild/${module.s3-bucket.values.id}:log-stream:*"]
+      },
+      {
+        Effect = "Allow",
+        Action = [
+          "ssm:GetParameters"
+        ],
+        Resource = ["arn:aws:ssm:*:*:parameter/${module.s3-bucket.values.id}"]
+      },
+      {
+        Effect = "Allow",
+        Action = [
+          "secretsmanager:GetSecretValue"
+        ],
+        Resource = ["arn:aws:secretsmanager:*:*:secret:*pipeline*"]
       }
     ]
   })
