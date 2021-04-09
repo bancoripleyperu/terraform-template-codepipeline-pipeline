@@ -17,5 +17,5 @@ module "codebuild-project" {
 
   vpc_id             = var.vpc_id
   subnets            = var.subnets
-  security_group_ids = var.vpc_id == null ? null : module.vpc-securitygroup.values.*.id[0]
+  security_group_ids = [var.vpc_id == null ? null : module.vpc-securitygroup[0].values.id]
 }
