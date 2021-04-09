@@ -16,5 +16,5 @@ resource "aws_security_group_rule" "this" {
   to_port           = 65535
   protocol          = "-1"
   cidr_blocks       = ["0.0.0.0/24"]
-  security_group_id = var.vpc_id == null ? null : module.vpc-securitygroup.values.*.id[0]
+  security_group_id = var.vpc_id == null ? null : module.vpc-securitygroup[0].values.id
 }
