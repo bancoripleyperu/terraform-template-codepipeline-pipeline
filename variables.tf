@@ -87,6 +87,24 @@ variable "source_version" {
   default     = "1"
 }
 
+variable "vpc_id" {
+  description = "(Optional) The vpc id of the codebuild project"
+  type        = string
+  default     = null
+}
+
+variable "subnets" {
+  description = "(Optional) The subnets id of the codebuild project"
+  type        = list(string)
+  default     = null
+}
+
+variable "security_group_ids" {
+  description = "(Optional) The security group ids of the codebuild project"
+  type        = list(string)
+  default     = null
+}
+
 variable "tags" {
   description = "(Optional) A mapping of tags to assign to the role."
   type        = map(string)

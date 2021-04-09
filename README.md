@@ -33,7 +33,7 @@ module "codepipeline-pipeline" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_codebuild-project"></a> [codebuild-project](#module\_codebuild-project) | bancoripleyperu/codebuild-project/aws | 0.0.3 |
+| <a name="module_codebuild-project"></a> [codebuild-project](#module\_codebuild-project) | bancoripleyperu/codebuild-project/aws | 0.0.5 |
 | <a name="module_codepipeline-pipeline"></a> [codepipeline-pipeline](#module\_codepipeline-pipeline) | bancoripleyperu/codepipeline-pipeline/aws | 0.0.2 |
 | <a name="module_iam-role"></a> [iam-role](#module\_iam-role) | bancoripleyperu/iam-role/aws | 0.0.3 |
 | <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | bancoripleyperu/s3-bucket/aws | 0.0.4 |
@@ -55,6 +55,7 @@ module "codepipeline-pipeline" {
 | <a name="input_environment_type"></a> [environment\_type](#input\_environment\_type) | (Optional) The environment type of the codebuild project | `string` | `"LINUX_CONTAINER"` | no |
 | <a name="input_environment_variable"></a> [environment\_variable](#input\_environment\_variable) | (Optional) Environment variable | `map(string)` | `{}` | no |
 | <a name="input_privileged_mode"></a> [privileged\_mode](#input\_privileged\_mode) | (Optional) The privileged mode of the codebuild project | `string` | `false` | no |
+| <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | (Optional) The security group ids of the codebuild project | `list(string)` | `null` | no |
 | <a name="input_source_branch"></a> [source\_branch](#input\_source\_branch) | (Optional) The name of the branch | `string` | `null` | no |
 | <a name="input_source_buildspec"></a> [source\_buildspec](#input\_source\_buildspec) | The buildspec of the codebuild project | `string` | n/a | yes |
 | <a name="input_source_connection"></a> [source\_connection](#input\_source\_connection) | (Optional) The arn of the connection | `string` | `null` | no |
@@ -64,8 +65,10 @@ module "codepipeline-pipeline" {
 | <a name="input_source_s3bucket"></a> [source\_s3bucket](#input\_source\_s3bucket) | (Optional) The s3 bucket of the source | `string` | `null` | no |
 | <a name="input_source_s3objectkey"></a> [source\_s3objectkey](#input\_source\_s3objectkey) | (Optional) The s3 object key of the source | `string` | `null` | no |
 | <a name="input_source_version"></a> [source\_version](#input\_source\_version) | (Optional) The version of the source | `string` | `"1"` | no |
+| <a name="input_subnets"></a> [subnets](#input\_subnets) | (Optional) The subnets id of the codebuild project | `list(string)` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | (Optional) A mapping of tags to assign to the role. | `map(string)` | `{}` | no |
 | <a name="input_template_name"></a> [template\_name](#input\_template\_name) | CodePipeline template name | `string` | `null` | no |
+| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | (Optional) The vpc id of the codebuild project | `string` | `null` | no |
 
 ## Outputs
 
