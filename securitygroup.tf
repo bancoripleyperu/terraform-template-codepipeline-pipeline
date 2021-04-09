@@ -1,6 +1,6 @@
 module "vpc-securitygroup" {
   source  = "bancoripleyperu/vpc-securitygroup/aws"
-  version = "0.0.2"
+  version = "0.0.3"
   count   = var.vpc_id == null ? 0 : 1
 
   name   = var.template_name == null ? random_string.this.result : var.template_name

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GIT_TAG_LATEST=$(curl -s -u ${GIT_USER}:${GIT_PASS} -H "Accept: application/vnd.github.v3+json" -X GET https://api.github.com/repos/${GITHUB_REPOSITORY}/git/refs/tags | jq -r .[].ref | cut -d "/" -f3 | sort -rn | head -1)
+GIT_TAG_LATEST=$(curl -s -u ${GIT_USER}:${GIT_PASS} -H "Accept: application/vnd.github.v3+json" -X GET https://api.github.com/repos/${GITHUB_REPOSITORY}/git/refs/tags | jq -r .[].ref | cut -d "/" -f3 | sort -rV | head -1)
 
 MAJOR_VERSION=$(echo ${GIT_TAG_LATEST} | cut -d "v" -f2 | cut -d "." -f1)
 MINOR_VERSION=$(echo ${GIT_TAG_LATEST} | cut -d "v" -f2 | cut -d "." -f2)
