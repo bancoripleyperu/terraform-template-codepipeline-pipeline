@@ -37,6 +37,7 @@ module "codepipeline-pipeline" {
 | <a name="module_codepipeline-pipeline"></a> [codepipeline-pipeline](#module\_codepipeline-pipeline) | bancoripleyperu/codepipeline-pipeline/aws | 0.0.2 |
 | <a name="module_iam-role"></a> [iam-role](#module\_iam-role) | bancoripleyperu/iam-role/aws | 0.0.3 |
 | <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | bancoripleyperu/s3-bucket/aws | 0.0.4 |
+| <a name="module_vpc-securitygroup"></a> [vpc-securitygroup](#module\_vpc-securitygroup) | bancoripleyperu/vpc-securitygroup/aws | 0.0.2 |
 
 ## Resources
 
@@ -44,6 +45,7 @@ module "codepipeline-pipeline" {
 |------|------|
 | [aws_iam_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_role_policy_attachment.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_security_group_rule.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
 | [random_string.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
 ## Inputs
