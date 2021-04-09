@@ -41,7 +41,7 @@ resource "aws_iam_policy" "this" {
           "codebuild:StartBuild",
           "codebuild:BatchGetBuilds"
         ],
-        Resource = ["arn:aws:codebuild:*:594671381337:project/${module.s3-bucket.values.id}"]
+        Resource = ["arn:aws:codebuild:*:*:project/${module.s3-bucket.values.id}"]
       },
       {
         Effect = "Allow",
@@ -67,7 +67,44 @@ resource "aws_iam_policy" "this" {
           "secretsmanager:GetSecretValue"
         ],
         Resource = ["arn:aws:secretsmanager:*:*:secret:*pipeline*"]
-      }
+      },
+      {
+        Effect = "Allow",
+        Action = [
+          "ec2:CreateNetworkInterface",
+          "ec2:DescribeDhcpOptions",
+          "ec2:DescribeNetworkInterfaces",
+          "ec2:DeleteNetworkInterface",
+          "ec2:DescribeSubnets",
+          "ec2:DescribeSecurityGroups",
+          "ec2:DescribeVpcs",
+          "ecr:GetAuthorizationToken"
+        ],
+        Resource = ["*"]
+      },
+      {
+        Effect = "Allow",
+        Action = [
+          "ec2:CreateNetworkInterfacePermission"
+        ],
+        Resource = ["arn:aws:ec2:*:*:network-interface/*"],
+        Condition = {
+          StringEquals = {
+            "ec2:AuthorizedService" = "codebuild.amazonaws.com"
+          }
+        }
+      },
+      {
+        Effect = "Allow",
+        Action = [
+          "ecr:BatchGetImage",
+          "ecr:GetDownloadUrlForLayer"
+        ],
+        Resource = [
+          "arn:aws:ecr:*:*:repository/*sonar*",
+          "arn:aws:ecr:*:*:repository/*postman*"
+        ]
+      },
     ]
   })
 }
