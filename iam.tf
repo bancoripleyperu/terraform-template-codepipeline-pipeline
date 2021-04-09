@@ -1,6 +1,6 @@
 module "iam-role" {
   source  = "bancoripleyperu/iam-role/aws"
-  version = "0.0.3"
+  version = "0.0.4"
 
   name         = var.template_name == null ? random_string.this.result : var.template_name
   aws_services = ["codepipeline.amazonaws.com", "codebuild.amazonaws.com"]
