@@ -33,11 +33,11 @@ module "codepipeline-pipeline" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_codebuild-project"></a> [codebuild-project](#module\_codebuild-project) | bancoripleyperu/codebuild-project/aws | 0.0.5 |
-| <a name="module_codepipeline-pipeline"></a> [codepipeline-pipeline](#module\_codepipeline-pipeline) | bancoripleyperu/codepipeline-pipeline/aws | 0.0.2 |
-| <a name="module_iam-role"></a> [iam-role](#module\_iam-role) | bancoripleyperu/iam-role/aws | 0.0.3 |
-| <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | bancoripleyperu/s3-bucket/aws | 0.0.4 |
-| <a name="module_vpc-securitygroup"></a> [vpc-securitygroup](#module\_vpc-securitygroup) | bancoripleyperu/vpc-securitygroup/aws | 0.0.2 |
+| <a name="module_codebuild-project"></a> [codebuild-project](#module\_codebuild-project) | bancoripleyperu/codebuild-project/aws | 0.0.6 |
+| <a name="module_codepipeline-pipeline"></a> [codepipeline-pipeline](#module\_codepipeline-pipeline) | bancoripleyperu/codepipeline-pipeline/aws | 0.0.3 |
+| <a name="module_iam-role"></a> [iam-role](#module\_iam-role) | bancoripleyperu/iam-role/aws | 0.0.4 |
+| <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | bancoripleyperu/s3-bucket/aws | 0.0.5 |
+| <a name="module_vpc-securitygroup"></a> [vpc-securitygroup](#module\_vpc-securitygroup) | bancoripleyperu/vpc-securitygroup/aws | 0.0.3 |
 
 ## Resources
 
