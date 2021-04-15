@@ -74,7 +74,12 @@ module "codepipeline-pipeline" {
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_bucket"></a> [bucket](#output\_bucket) | S3 bucket values |
+| <a name="output_codebuild"></a> [codebuild](#output\_codebuild) | Codebuild project values |
+| <a name="output_codepipeline"></a> [codepipeline](#output\_codepipeline) | Codepipeline values |
+| <a name="output_role"></a> [role](#output\_role) | IAM role values |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Test
