@@ -1,7 +1,7 @@
 module "this" {
   source = "../../"
 
-  template_name      = "titan-dev-test"
+  template_name      = random_string.this.result
   source_buildspec   = file("buildspec.yml")
   source_provider    = "S3"
   source_s3bucket    = module.s3-bucket.values.id
@@ -12,12 +12,17 @@ module "this" {
   }
 }
 
-# dependencies
+resource "random_string" "this" {
+  length  = 8
+  special = false
+  upper   = false
+}
+
 module "s3-bucket" {
   source  = "bancoripleyperu/s3-bucket/aws"
   version = "0.0.4"
 
-  bucket        = "titan-dev-test-source"
+  bucket        = "${random_string.this.result}-source"
   force_destroy = true
   tags = {
     Project = "titan"
